@@ -1,9 +1,9 @@
 export interface supplierInterface {
-    ProductName: string;
-    description: string;
-    type : string,
+    ProductName: string; //
+    description: string;//
+    type : string,//
     cost: number,
-    quantity: number,
+    quantity: number,//
     totalCost: number,
     orderedDate: string
     orderedReceived: string,
