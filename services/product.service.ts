@@ -30,7 +30,8 @@ export const updateProductQuantityService = async (name: string, quantity: numbe
         break;
 
         case "-":
-           product.quantity -= quantity;
+           const result = product.quantity - quantity;
+           product.quantity = (result > 0 ) ? result : 0;
         break;
     }
     await product.save();
