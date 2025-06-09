@@ -8,6 +8,10 @@ export const getProductService = async () => {
     return products;
 }
 
+export const deleteProductService = async ( id : string) => {
+    await ProductDb.findByIdAndDelete(id);
+}
+
 export const updatedProductPrceCategoryService = async (_id : string, price : number, category : string) => {
     await ProductDb.findByIdAndUpdate(_id, {price, category})
 }

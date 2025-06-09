@@ -1,10 +1,17 @@
 import { productInterface, getProductInterface } from "../types/product.type";
 import { Request, Response } from "express";
-import { getProductService, createProductService, updatedProductPrceCategoryService, updatedProductYearService} from "../services/product.service";
+import {deleteProductService, getProductService, createProductService, updatedProductPrceCategoryService, updatedProductYearService} from "../services/product.service";
 
 
 
 export const getProductController = async (request: Request, response: Response) => {
+    const products = await getProductService();
+    response.send(products);
+}
+
+export const deleteProductController = async (request: Request, response: Response) => {
+    const { id } = request.params;
+    await deleteProductService(id);
     const products = await getProductService();
     response.send(products);
 }
